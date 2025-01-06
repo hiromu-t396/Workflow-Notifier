@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Notifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Workflow Notifier</h1>
+
+        <!-- 認証状態表示部分 -->
+        <section class="auth-section">
+            <div id="auth-status">
+                <!-- 未認証時 -->
+                <div id="unauthorized" class="auth-container">
+                    <p>Please sign in with GitHub to start monitoring your repositories</p>
+                    <button id="github-auth">Sign in with GitHub</button>
+                </div>
+                <!-- 認証済み時 -->
+                <div id="authorized" class="auth-container" style="display: none;">
+                    <p>Signed in as <span id="username"></span></p>
+                    <button id="sign-out">Sign Out</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- リポジトリ管理セクション（認証後に表示） -->
+        <section id="repo-management" class="management-section" style="display: none;">
+            <!-- リポジトリ追加フォーム -->
+            <div class="add-repo-section">
+                <h2>Add Repository to Monitor</h2>
+                <div class="form-group">
+                    <select id="repo-select">
+                        <option value="">Select a repository</option>
+                    </select>
+                    <input type="text" id="branch" placeholder="Branch (e.g., main, develop)">
+                    <button id="add-repo">Add</button>
+                </div>
+            </div>
+
+            <!-- 監視対象リポジトリ一覧 -->
+            <div class="watching-repos">
+                <h2>Watching Repositories</h2>
+                <div id="repo-list"></div>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="src/popup.js"></script>
+</body>
+</html>

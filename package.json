@@ -1,0 +1,19 @@
+{
+  "name": "google_extensions_github_actions",
+  "version": "1.0.0",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.18",
+    "vite": "^4.5.0",
+    "@types/chrome": "^0.0.254"
+  }
+}

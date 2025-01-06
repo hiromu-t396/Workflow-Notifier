@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Workflow Notifier",
+  "version": "1.0",
+  "description": "Receive notifications for GitHub Actions workflow status changes",
+
+  "permissions": [
+    "identity",
+    "notifications",
+    "storage",
+    "alarms"
+  ],
+
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.github.com/*"
+  ],
+
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "public/icons/icon16.png",
+      "32": "public/icons/icon32.png",
+      "48": "public/icons/icon48.png",
+      "128": "public/icons/icon128.png"
+    }
+  },
+
+  "web_accessible_resources": [{
+    "resources": [
+      ".env",
+      "icons/*.png"
+    ],
+    "matches": ["<all_urls>"]
+  }],
+
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "32": "public/icons/icon32.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
+  }
+}
