@@ -16,7 +16,7 @@ async function loadConfig() {
       return {
           GITHUB_CLIENT_ID: config.GITHUB_CLIENT_ID,
           GITHUB_CLIENT_SECRET: config.GITHUB_CLIENT_SECRET,
-          CHECK_INTERVAL: 60 * 1000,  // 1分
+          CHECK_INTERVAL: 20 * 1000,  // 20秒
           REDIRECT_URL: chrome.identity.getRedirectURL()
       };
   } catch (error) {

@@ -214,8 +214,8 @@ function startMonitoring() {
     // 初回チェック
     checkWorkflowStatus();
 
-    // 1分ごとにチェック（60000ミリ秒 = 1分）
-    setInterval(checkWorkflowStatus, 60000);
+    // 20秒ごとにチェック（20000ミリ秒 = 20秒）
+    setInterval(checkWorkflowStatus, 20000);
 }
 
 // インストール時の初期化
