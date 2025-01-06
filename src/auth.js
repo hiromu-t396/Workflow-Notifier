@@ -48,7 +48,8 @@ class Auth {
       try {
           // background.jsに認証要求を送信
           const response = await chrome.runtime.sendMessage({
-              type: 'authenticate'
+              type: 'authenticate',
+              forceAuth: true
           });
 
           if (response.success && response.token) {

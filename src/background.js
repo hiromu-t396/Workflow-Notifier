@@ -30,6 +30,7 @@ async function authenticateWithGithub() {
           `?client_id=${GITHUB_CONFIG.GITHUB_CLIENT_ID}` +
           `&redirect_uri=${encodeURIComponent(redirectURL)}` +
           `&scope=repo`;
+          `&prompt=consent`;
 
       const responseUrl = await chrome.identity.launchWebAuthFlow({
           url: authUrl,
